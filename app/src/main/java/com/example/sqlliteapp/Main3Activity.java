@@ -175,18 +175,16 @@ public class Main3Activity extends AppCompatActivity {
         intent.putExtra("SetNotify","SetNotification");
 
 
-//        PendingIntent pi = PendingIntent.getBroadcast(this, RecordID_received, intent,
-//                PendingIntent.FLAG_UPDATE_CURRENT);
+
         PendingIntent pi = PendingIntent.getBroadcast(this, RecordID_received, intent,0);
 
-//        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-//                AlarmManager.INTERVAL_DAY , pi);
+
         am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pi);
-//        SetNotification();
+
     }
 
     public void CancelAlarm(){
-//        Toast.makeText(this,"Alarm canceled",Toast.LENGTH_SHORT).show();
+
         AlarmManager am = (AlarmManager)getSystemService (Context.ALARM_SERVICE);
 
         Intent intent = new Intent(this, MyReceiver.class);
@@ -221,8 +219,7 @@ public class Main3Activity extends AppCompatActivity {
             finish();
             CancelAlarm();
             Toast.makeText(getApplicationContext(),"Note deleted!",Toast.LENGTH_SHORT).show();
-//            getdatabaseinfo(1,"ignore");
-//            RecordID=0;
+
         }
         else{
             Toast.makeText(getApplicationContext(),"Can't delete!",Toast.LENGTH_SHORT).show();
@@ -265,13 +262,6 @@ public class Main3Activity extends AppCompatActivity {
             if (id > 0) {
                 Toast.makeText(getApplicationContext(), "Note Taken!", Toast.LENGTH_SHORT).show();
                 finish();
-//                etTitle.setText("");
-//                etDesc.setText("");
-//                getdatabaseinfo(1, "ignore");
-//                RecordID = 0;
-
-//                MainActivity ma1=new MainActivity();
-//                ma1.getdatabaseinfo(1,"ignore");
 
             } else
                 Toast.makeText(getApplicationContext(), "Failed to take Note", Toast.LENGTH_SHORT).show();
@@ -311,20 +301,8 @@ public class Main3Activity extends AppCompatActivity {
             if (count2 > 0) {
                 Toast.makeText(this, "Note updated!", Toast.LENGTH_SHORT).show();
                 finish();
-//                RecordID = 0;
-
-//                MainActivity ma2=new MainActivity();
-//                ma2.getdatabaseinfo(1,"ignore");
-
             } else
                 Toast.makeText(getApplicationContext(), "Choose one Note to update!", Toast.LENGTH_SHORT).show();
-//            etTitle.setText("");
-//            etDesc.setText("");
-
-
-//        androidx.fragment.app.FragmentManager fm=getSupportFragmentManager();
-//        PopInfo popInfo=new PopInfo();
-//        popInfo.show(fm,"Show Fragment");
         }
         else{
             Toast.makeText(getApplicationContext(), "One or more fields are empty", Toast.LENGTH_SHORT).show();

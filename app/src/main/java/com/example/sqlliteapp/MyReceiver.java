@@ -41,24 +41,6 @@ public class MyReceiver extends BroadcastReceiver {
 
             // Key for the string that's delivered in the action's intent.
 
-//
-//            String replyLabel = context.getResources().getString(notification_id);
-//            RemoteInput remoteInput = new RemoteInput.Builder(b.getString("NotiID"))
-//                    .setLabel(replyLabel)
-//                    .build();
-//
-//            // Build a PendingIntent for the reply action to trigger.
-//            PendingIntent replyPendingIntent =
-//                    PendingIntent.getBroadcast(context,
-//                            notification_id,
-//                            getMessageReplyIntent(notification_id),
-//                            PendingIntent.FLAG_UPDATE_CURRENT);
-//
-
-
-//
-//            MediaPlayer ring= MediaPlayer.create(context,R.raw.smoke_beep);
-//            ring.start();
             MusicControl.getInstance(context).playMusic();
             String CHANNELID = "ReminderID";
             String GROUP_KEY = "com.android.example.WORK_EMAIL";
@@ -67,7 +49,7 @@ public class MyReceiver extends BroadcastReceiver {
             Intent snoozeButton = new Intent(context, SnoozeReceiver.class);
             snoozeButton.setAction("com.akash.SnoozeReceiver");
             snoozeButton.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-    //            snoozeButton.putExtra("AlarmSongSnooze", (Parcelable) ring);
+
 
             PendingIntent pendingSwitchIntent = PendingIntent.getBroadcast(context, notification_id, snoozeButton, 0);
 
@@ -77,8 +59,7 @@ public class MyReceiver extends BroadcastReceiver {
                     new NotificationCompat.Action.Builder(R.drawable.reminder_icon_yellow,
                             "SNOOZE", pendingSwitchIntent)
                             .build();
-//     .setStyle(new NotificationCompat.BigTextStyle()
-//                      .bigText(b.getString("Noti_Desc")))
+
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNELID)
                     .setSmallIcon(R.drawable.notes_launcher)
                     .setColor(ContextCompat.getColor(context, R.color.notificationColor))
@@ -112,14 +93,6 @@ public class MyReceiver extends BroadcastReceiver {
                 // notificationId is a unique int for each notification that you must define
                 notificationManager1.cancel(notification_id);
             }
-//            try {
-//                Thread.sleep(5000);
-//                ring.stop();
-//                ring.release();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-
 
 
         }
@@ -128,24 +101,6 @@ public class MyReceiver extends BroadcastReceiver {
         }
     }
 
-//    public void SetNotification(){
-////        NotificationCompat.Builder nbuilder=new NotificationCompat.Builder(this);
-////        nbuilder.setContentTitle("Hello")
-////                .setContentText("Test ok fine nice oto met yo")
-////                .setSmallIcon(R.drawable.notes_launcher);
-////
-////        NotificationManager manager=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-////        manager.notify(RecordID_received,nbuilder.build());
-//
-//
-//
-//
-//    }
-//
-//    public void CancelNotification(){
-//        NotificationManager manager=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-//        manager.cancel(RecordID_received);
-//    }
 }
 
 

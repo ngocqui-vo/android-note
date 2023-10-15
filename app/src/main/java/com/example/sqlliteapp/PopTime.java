@@ -44,18 +44,15 @@ public class PopTime extends DialogFragment{
 
         if(!time_get_time.equalsIgnoreCase("ignore")) {
             String[] time_arr = time_get_time.split(":", 2);
-//            String[] date_arr = date_get_time.split("-", 3);
+
             for (String a : time_arr)
                 System.out.println("Holathis1" + a);
 
-//            for (String b : date_arr)
-//                System.out.println("Holathis2" + b);
+
 
             int Hour = Integer.parseInt(time_arr[0]);
             int Minute = Integer.parseInt(time_arr[1]);
-//            int Year = Integer.parseInt(date_arr[0]);
-//            int Month = Integer.parseInt(date_arr[1]);
-//            int Day = Integer.parseInt(date_arr[2]);
+
 
             tp.setHour(Hour);
             tp.setMinute(Minute);
@@ -64,7 +61,6 @@ public class PopTime extends DialogFragment{
         save_timepick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getContext(),"Save timepick",Toast.LENGTH_SHORT).show();
                 String timeOn=tp.getHour()+":"+tp.getMinute();
                 System.out.println("MEWW"+timeOn);
                 String[] time_arr = timeOn.split(":",2);
@@ -80,12 +76,6 @@ public class PopTime extends DialogFragment{
 
 
                 PopInfo maa3=new PopInfo();
-//                maa3.setTime_pass(timeOn);
-//                Bundle bundle1 = new Bundle();
-//                bundle1.putString("time_value", RemTime.getText().toString());
-//                bundle1.putString("date_value", RemDate.getText().toString());
-//
-//                popInfo.setArguments(bundle1);
                 Bundle bundleTime_back = new Bundle();
                 bundleTime_back.putString("time_value",timeOn);
                 bundleTime_back.putString("date_value", date_get_time);
@@ -104,7 +94,6 @@ public class PopTime extends DialogFragment{
         cancel_timepick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getContext(),"Cancel timepick",Toast.LENGTH_SHORT).show();
                 androidx.fragment.app.FragmentManager fragmentManager6=getFragmentManager();
 
 

@@ -70,16 +70,6 @@ public class PopInfo extends DialogFragment{
         }
         else{
 
-//            String[] date_array = date_get.split("-",3);
-//
-//            for (String a : date_array)
-//                System.out.println("Holathis13"+a);
-//
-//            System.out.println("Holathis123"+date_array[0]);
-//            System.out.println("Holathis123"+date_array[1]);
-//            System.out.println("Holathis123"+date_array[2]);
-//            Integer month_correction=Integer.parseInt(date_array[1])+1;
-//            String s1=date_array[2]+"-"+month_correction+"-"+date_array[0];
             date_df.setText(date_get);
         }
 
@@ -95,7 +85,6 @@ public class PopInfo extends DialogFragment{
         time_pick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getContext(),"time_pick",Toast.LENGTH_SHORT).show();
                 androidx.fragment.app.FragmentManager fragmentManager1=getFragmentManager();
                 PopTime poptime=new PopTime();
                 Bundle bundle1_time = new Bundle();
@@ -111,7 +100,6 @@ public class PopInfo extends DialogFragment{
         date_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getContext(),"date_pic",Toast.LENGTH_SHORT).show();
                 androidx.fragment.app.FragmentManager fragmentManager2=getFragmentManager();
                 PopDate popdate=new PopDate();
                 Bundle bundle1_date = new Bundle();
@@ -143,99 +131,9 @@ public class PopInfo extends DialogFragment{
             }
         });
 
-
-
-
-
-
-
-
-
-
-
-        /*
-        old code for setting onclick listner for edit and delete
-        datetime_pop=(TextView)view.findViewById(R.id.datetime_tv3);
-        title_pop=(TextView)view.findViewById(R.id.title_tv3);
-        desc_pop=(TextView)view.findViewById(R.id.desc_tv3);
-        edit_pop=(Button)view.findViewById(R.id.edit_popup);
-        delete_pop=(Button)view.findViewById(R.id.delete_popup);
-
-        if (getArguments() != null && !TextUtils.isEmpty(getArguments().getString("datetime")))
-            datetime_pop.setText(getArguments().getString("datetime"));
-        if (getArguments() != null && !TextUtils.isEmpty(getArguments().getString("title")))
-            title_pop.setText(getArguments().getString("title"));
-        if (getArguments() != null && !TextUtils.isEmpty(getArguments().getString("description")))
-            desc_pop.setText(getArguments().getString("description"));
-        if (getArguments() != null && !TextUtils.isEmpty(getArguments().getCharSequence("IDvalue")))
-            id_value=getArguments().getString("IDvalue");
-//        System.out.println("Hello World1"+id_value);
-
-//        cancel_pop=(Button)view.findViewById(R.id.cancel_popup);
-//        title_pop.setSelected(true);
-        title_pop.setMovementMethod(new ScrollingMovementMethod());
-//        title_pop.setHorizontallyScrolling(true);
-        desc_pop.setMovementMethod(new ScrollingMovementMethod());
-
-//        edit_pop.setOnClickListener(this);
-
-        edit_pop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(getContext(),"After modifying please press on UPDATE button",Toast.LENGTH_SHORT).show();
-                dismiss();
-                MainActivity ma1=(MainActivity)getActivity();
-                ma1.update_element_new(title_pop.getText().toString(),desc_pop.getText().toString());
-
-
-            }
-        });
-        delete_pop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder info1=new AlertDialog.Builder(getContext());
-                info1.setMessage("Are you sure you want to delete this note?")
-                        .setTitle("Warning")
-                        .setNeutralButton("YES", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dismiss();
-                                MainActivity ma=(MainActivity)getActivity();
-//                System.out.println("Hello World"+id_value);
-                                ma.delete_element(id_value);
-                            }
-                        })
-                        .setPositiveButton("CANCEL", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .show();
-
-//                Toast.makeText(getContext(),"DELETE",Toast.LENGTH_SHORT).show();
-//                dismiss();
-//                MainActivity ma=(MainActivity)getActivity();
-////                System.out.println("Hello World"+id_value);
-//                ma.delete_element(id_value);
-
-            }
-        });
-        */
-
         return view;
     }
-    /*
-    Below code is not useful
-    void set_time_frag(String timenow){
-        time_df.setText(timenow);
-    }
-    void set_date_frag(String datenow){
-//        TextView date_df=(TextView)view.findViewById(R.id.date_df);
 
-        date_df.setText(datenow);
-    }
-    */
 
 
 

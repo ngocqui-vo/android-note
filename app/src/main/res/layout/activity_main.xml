@@ -11,10 +11,9 @@
         android:id="@+id/floating_add_bu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="4in"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="3.9in"
+
         android:tooltipText="ADD NEW NOTE"
         android:alpha="0.65"
         android:clickable="true"
@@ -26,7 +25,8 @@
         app:hoveredFocusedTranslationZ="6dp"
         app:maxImageSize="55dp"
         app:pressedTranslationZ="6dp"
-        app:srcCompat="@drawable/add_icon_style" />
+        app:srcCompat="@drawable/add_icon_style"
+        />
 
     <ListView
         android:id="@+id/lv_all"

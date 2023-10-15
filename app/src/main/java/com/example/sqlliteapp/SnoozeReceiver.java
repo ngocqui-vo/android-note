@@ -13,11 +13,6 @@ public class SnoozeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         if(intent.getAction().equalsIgnoreCase("com.akash.SnoozeReceiver")) {
-//        Bundle b1=intent.getExtras();
-//        assert b1 != null;
-//        MediaPlayer mediaPlayer=b1.getParcelable("AlarmSongSnooze");
-//        assert mediaPlayer != null;
-//        mediaPlayer.stop();
 
             System.out.println("Helllo from snooze receive");
             MusicControl.getInstance(context).stopMusic();

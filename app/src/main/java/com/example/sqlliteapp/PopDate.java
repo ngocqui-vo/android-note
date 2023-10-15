@@ -33,16 +33,14 @@ public class PopDate extends DialogFragment{
 
 
         if(!date_get_date.equalsIgnoreCase("ignore")) {
-//            String[] time_arr = time_get_date.split(":", 2);
+
             String[] date_arr = date_get_date.split("-", 3);
-//            for (String a : time_arr)
-//                System.out.println("Holathis1" + a);
+
 
             for (String b : date_arr)
                 System.out.println("Holathis2" + b);
 
-//            int Hour = Integer.parseInt(time_arr[0]);
-//            int Minute = Integer.parseInt(time_arr[1]);
+
             int Year = Integer.parseInt(date_arr[2]);
             int Month = Integer.parseInt(date_arr[1]);
             int Day = Integer.parseInt(date_arr[0]);
@@ -53,7 +51,6 @@ public class PopDate extends DialogFragment{
         save_datepick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getContext(),"Save datepick",Toast.LENGTH_SHORT).show();
 
                 Integer m=Integer.parseInt(String.valueOf(dp.getMonth()))+1;
                 String dateOn=dp.getDayOfMonth()+"-"+ m +"-"+dp.getYear();
